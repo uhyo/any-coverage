@@ -38,6 +38,7 @@ export function check(configFile: string) {
 }
 
 function checkProgram(program: ts.Program, options: CheckOptions) {
+  const checker = program.getTypeChecker();
   const files = program.getSourceFiles();
   for (const file of files) {
     // TODO: チェックをちゃんと書く
@@ -45,6 +46,7 @@ function checkProgram(program: ts.Program, options: CheckOptions) {
 
     const o: VisitOptions = {
       projectDir: options.projectDir,
+      checker,
       sourceFile: file
     };
 

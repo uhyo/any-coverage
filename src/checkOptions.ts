@@ -6,5 +6,6 @@ export type CheckOptions = {
 
 export type VisitOptions = {
   projectDir: string;
+  checker: ts.TypeChecker;
   sourceFile: ts.SourceFile;
 };
