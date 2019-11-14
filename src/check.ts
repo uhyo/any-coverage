@@ -25,8 +25,6 @@ export function check(configFile: string) {
   if (!parsedCommandLine) {
     throw new Error("!?");
   }
-  console.log(parsedCommandLine.fileNames);
-
   const program = ts.createProgram({
     rootNames: parsedCommandLine.fileNames,
     options: parsedCommandLine.options
